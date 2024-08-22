@@ -1,0 +1,54 @@
+# Creating a dictionary
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+
+# 1. get(): Retrieve the value for a given key, with optional default
+value_a = my_dict.get('a')
+value_d = my_dict.get('d', 'Not Found')
+print("Value of 'a':", value_a)  # Output: 1
+print("Value of 'd':", value_d)  # Output: Not Found
+
+# 2. items(): Return a view object displaying a list of dictionary's key-value tuple pairs
+items = my_dict.items()
+print("Items:", list(items))  # Output: [('a', 1), ('b', 2), ('c', 3)]
+
+# 3. keys(): Return a view object displaying a list of all the keys in the dictionary
+keys = my_dict.keys()
+print("Keys:", list(keys))  # Output: ['a', 'b', 'c']
+
+# 4. values(): Return a view object displaying a list of all the values in the dictionary
+values = my_dict.values()
+print("Values:", list(values))  # Output: [1, 2, 3]
+
+# 5. update(): Update the dictionary with elements from another dictionary or iterable of key-value pairs
+my_dict.update({'d': 4, 'e': 5})
+print("After update:", my_dict)  # Output: {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+# 6. pop(): Remove the item with the specified key and return its value. Raises KeyError if the key is not found
+popped_value = my_dict.pop('b')
+print("After pop:", my_dict)  # Output: {'a': 1, 'c': 3, 'd': 4, 'e': 5}
+print("Popped value:", popped_value)  # Output: 2
+
+# 7. popitem(): Remove and return a (key, value) pair from the dictionary. Pairs are returned in LIFO order
+popped_item = my_dict.popitem()
+print("After popitem:", my_dict)  # Output: {'a': 1, 'c': 3, 'd': 4}
+print("Popped item:", popped_item)  # Output: ('e', 5)
+
+# 8. setdefault(): Return the value of a key if it is in the dictionary. If not, insert the key with a specified default value
+default_value = my_dict.setdefault('f', 6)
+print("After setdefault:", my_dict)  # Output: {'a': 1, 'c': 3, 'd': 4, 'f': 6}
+print("Default value for 'f':", default_value)  # Output: 6
+
+# 9. clear(): Remove all items from the dictionary
+my_dict.clear()
+print("After clear:", my_dict)  # Output: {}
+
+# Restoring dictionary for further examples
+my_dict = {'x': 10, 'y': 20, 'z': 30}
+
+# 10. copy(): Create a shallow copy of the dictionary
+copied_dict = my_dict.copy()
+print("Copied dictionary:", copied_dict)  # Output: {'x': 10, 'y': 20, 'z': 30}
+
+# 11. fromkeys(): Create a new dictionary from a sequence of keys, with a specified value
+new_dict = dict.fromkeys(['a', 'b', 'c'], 0)
+print("Fromkeys dictionary:", new_dict)  # Output: {'a': 0, 'b': 0, 'c': 0}
